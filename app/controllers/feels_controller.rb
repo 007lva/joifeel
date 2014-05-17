@@ -7,11 +7,12 @@ class FeelsController < ApplicationController
 
   def create
     @feel = current_user.feels.new(feel_params)
-    respond_to do |format|
-      if @feel.save
-        format.html { redirect_to feels_path, notice: 'Feel created.' }
-      end
-    end
+    @feel.save
+    # respond_to do |format|
+    #   if @feel.save
+    #     format.html { redirect_to feels_path, notice: 'Feel created.' }
+    #   end
+    # end
   end
 
   def new
