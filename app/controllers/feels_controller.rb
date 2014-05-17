@@ -1,13 +1,17 @@
 class FeelsController < ApplicationController
   def index
-    @feels = Feel.all
     @feel = Feel.new
     @picture = Picture.new
+    @feels = Feel.all.order(created_at: :desc)
   end
 
   def create
-    @feel = Feel.new(feel_params) 
-    @feel.save
+    @feel = Feel.new(feel_params)
+    respond_to do |format|
+      if @feel.save
+        format.html { redirect_to feels_path, notice: 'Feel created.' }
+      end
+    end
   end
 
   def new

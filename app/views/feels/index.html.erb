@@ -1,5 +1,5 @@
 <%= form_for(@feel, :html => { :method => :post, :multipart => true },
-             remote: true, url:feels_path(@feel)) do |d| %>
+             url:feels_path(@feel)) do |d| %>
 
   <%= d.text_area :description, { :placeholder => "Que tal feliz te sientes"} %>
   <%= d.text_field :tag_list, { :placeholder => "Separar por comas" } %>
