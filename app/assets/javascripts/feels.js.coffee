@@ -1,3 +1,9 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$(document).ready ->
+  $("#picture").on "change", ->
+    $(this).closest("form").ajaxSubmit
+      beforeSubmit: (a, f, o) ->
+        o.dataType = "json"
+      complete: (XMLHttpRequest, status) ->
+        picture = JSON.parse(XMLHttpRequest.responseText)
+        console.log picture.picture_url.picture.url
+        $("#feel_image_url").val(picture.picture_url.picture.url)

@@ -32,6 +32,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'carrierwave'
 gem 'acts-as-taggable-on'
+gem 'jquery-form-rails'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
