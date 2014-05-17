@@ -25,6 +25,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'jbuilder', '~> 1.2'
 gem 'omniauth'
 gem 'omniauth-facebook'
