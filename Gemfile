@@ -32,6 +32,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'carrierwave'
 gem 'acts-as-taggable-on'
+gem "acts_as_follower"
 gem 'jquery-form-rails'
 
 group :doc do
