@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20140517175125) do
     t.string   "provider"
     t.string   "uid"
     t.string   "name"
+    t.string   "photo_url"
     t.string   "email",            default: "", null: false
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"

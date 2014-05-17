@@ -4,6 +4,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :provider
       t.string :uid
       t.string :name
+      t.string :photo_url
       t.string :email, null: false, default: ""
       t.string :oauth_token
       t.datetime :oauth_expires_at
