@@ -1,8 +1,16 @@
+<%= image_tag @user.photo_url %>
 <p><%= @user.name %></p>
-seguir:
-Followers:
-<%=  @user.all_follows.each do |follow| %>
-  follow
+<% if @user != current_user %>
+  seguir: <%= follow_button(@user) %>
 <% end %>
+Followers:
+<ul>
+  <% @user.followers.each do |follow| %>
+  <li><%= follow.name %></li>
+  <% end %>
+</ul>
+
+
+
 
 

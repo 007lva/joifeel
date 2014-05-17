@@ -1,6 +1,9 @@
 Joifeel::Application.routes.draw do
 
-  resources :users, only: :show
+  resources :users, only: :show do
+    post 'follow', to: 'following_relationships#create'
+    delete 'follow', to: 'following_relationships#destroy'
+  end
   resources :feels
   resources :pictures
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
