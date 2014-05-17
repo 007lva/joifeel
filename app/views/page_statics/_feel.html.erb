@@ -1,0 +1,8 @@
+<%= div_for feel do %>
+  <%= image_tag(feel.image_url) %>
+  <%= feel.description %>
+  Tags
+  <% feel.tag_list.each do |tag|%>
+    <%= tag %>
+  <% end %>
+<% end %>
