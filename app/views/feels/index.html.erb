@@ -1,5 +1,13 @@
-<h1>Feels#index</h1>
-<p>Find me in app/views/feels/index.html.erb</p>
+<%= form_for(@feel, :html => { :method => :post, :multipart => true }, 
+             remote: true, url:feels_path(@feel)) do |d| %>
 
+  <%= d.text_area :description, { :placeholder => "Que tal feliz te sientes"} %> 
+  <%= d.text_field :tag_list, { :placeholder => "Separar por comas" } %>
+  <%= d.hidden_field :image_url %>
+  <%= d.submit("Save") %>
+<% end %>
 
-
+<%= form_for(@picture, :html => { :method => :post, :multipart => true },
+             remote: true, :url => pictures_path) do |d| %>
+    <%= d.file_field :picture, :id => "picture" %>
+<% end %>
