@@ -11,7 +11,9 @@
     <% end %>
     <p><%= " hace: #{time_ago_in_words(feel.created_at)}" %></p>
     <p>
-      <%= "by: #{feel.user.name} "%>
+      by
+      <%= link_to feel.user.name, user_path(feel.user.id) %>
+
     </p>
 
 

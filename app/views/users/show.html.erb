@@ -1,0 +1,8 @@
+<p><%= @user.name %></p>
+seguir:
+Followers:
+<%=  @user.all_follows.each do |follow| %>
+  follow
+<% end %>
+
+
