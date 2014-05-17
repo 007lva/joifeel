@@ -11,3 +11,7 @@
  *= require_self
  *= require_tree .
  */
+
+.navbar-default .navbar-brand {
+  color: #FF5100;
+}
