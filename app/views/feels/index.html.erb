@@ -8,7 +8,7 @@
              url:feels_path(@feel), remote: true) do |d| %>
 
     <%= d.text_area :description, { :placeholder => "Que tal feliz te sientes", class: 'form-control'} %>
-    <%= d.text_field :tag_list, { :placeholder => "Separar por comas", class: 'form-control' } %>
+    <%= d.text_field :tag_list, { :placeholder => "Etiquetas separar por comas", class: 'form-control' } %>
     <br>
     <%= d.hidden_field :image_url %>
     <%= d.submit("Guardar", class: 'btn') %>
@@ -18,6 +18,6 @@
 
 
 <div id='list_feels'>
-  <p>Feeels</p>
+  <p>Feels</p>
   <%= render @feels %>
 </div>
