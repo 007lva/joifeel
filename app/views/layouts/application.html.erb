@@ -62,10 +62,16 @@
                         <a href="#portfolio">Portfolio</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#about">About</a>
+                        <%= link_to "Feels", feels_path %>
                     </li>
                     <li class="page-scroll">
-                        <a href="#contact">Contact</a>
+                        <% if current_user %>
+                          <a><%= current_user.name %></a>
+                          <%= image_tag current_user.photo_url, size: '35' %>
+                          <%= link_to "Sign out", signout_path, id: "sign_out" %>
+                          <% else %>
+                            <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+                        <% end %>
                     </li>
                 </ul>
             </div>

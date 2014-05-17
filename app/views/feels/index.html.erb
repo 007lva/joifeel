@@ -1,18 +1,23 @@
-<%= form_for(@feel, :html => { :method => :post, :multipart => true },
+<div class="panel panel-default">
+  <%= form_for(@picture, :html => { :method => :post, :multipart => true },
+               remote: true, :url => pictures_path) do |d| %>
+      <%= d.file_field :picture, :id => "picture", class: 'btn' %>
+  <% end %>
+  <div class="panel-body">
+    <%= form_for(@feel, :html => { :method => :post, :multipart => true },
              url:feels_path(@feel), remote: true) do |d| %>
 
-  <%= d.text_area :description, { :placeholder => "Que tal feliz te sientes"} %>
-  <%= d.text_field :tag_list, { :placeholder => "Separar por comas" } %>
-  <%= d.hidden_field :image_url %>
-  <%= d.submit("Save") %>
-<% end %>
+    <%= d.text_area :description, { :placeholder => "Que tal feliz te sientes", class: 'form-control'} %>
+    <%= d.text_field :tag_list, { :placeholder => "Separar por comas", class: 'form-control' } %>
+    <br>
+    <%= d.hidden_field :image_url %>
+    <%= d.submit("Guardar", class: 'btn') %>
+  <% end %>
+  </div>
+</div>
 
-<%= form_for(@picture, :html => { :method => :post, :multipart => true },
-             remote: true, :url => pictures_path) do |d| %>
-    <%= d.file_field :picture, :id => "picture" %>
-<% end %>
 
 <div id='list_feels'>
-  <p>Sentimientos</p>
+  <p>Feeels</p>
   <%= render @feels %>
 </div>
